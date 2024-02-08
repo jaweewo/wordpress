@@ -42,3 +42,22 @@ Aplicar los manifiestos de Kubernetes:
 Usa el comando kubectl apply para aplicar los manifiestos de despliegue y servicio de Kubernetes.
 Verifica que WordPress esté desplegado correctamente en Kubernetes y que el tema personalizado esté disponible.
 Estos ejercicios te ayudarán a familiarizarte con la creación de imágenes Docker personalizadas, el montaje de volúmenes, el uso de Docker Compose para orquestar servicios y el despliegue de aplicaciones en Kubernetes.
+
+
+
+## BONUS TRACK
+
+Añadir prometheus, grafana, Cadvisor y node-exporter.
+
+Consultar metricas desde grafana y desde prometheus.
+
+TIP: 
+cadvisor port: 8080
+node-exporter port: 9100
+
+cAdvisor volumes:
+
+      - /:/rootfs:ro
+      - /var/run:/var/run:rw
+      - /sys:/sys:ro
+      - /var/lib/docker/:/var/lib/docker:ro
