@@ -1,6 +1,6 @@
 # wordpress
 Ejercicios para Docker:
-Crear un tema personalizado:
+Desplegar la imagen mediante comandos de docker, docker compose y kubernetes.
 
 Investiga y elige un tema de WordPress existente o crea uno personalizado.
 Modifica el tema según tus preferencias.
