@@ -52,6 +52,36 @@ Añadir prometheus, grafana, Cadvisor y node-exporter.
 Consultar metricas desde grafana y desde prometheus.
 
 TIP: 
+
+Prometheus.yml
+```
+global:
+  scrape_interval: 15s
+  scrape_timeout: 10s
+  evaluation_interval: 15s
+
+scrape_configs:
+  - job_name: 'prometheus'
+    static_configs:
+      - targets: ['localhost:9090']  # Prometheus itself
+
+  - job_name: 'wordpress'
+    static_configs:
+      - targets: ['wordpress:80']  # WordPress service
+
+  - job_name: 'grafana'
+    static_configs:
+      - targets: ['grafana:3000']  # Grafana service
+
+  - job_name: 'node-exporter'
+    static_configs:
+      - targets: ['node-exporter:9100']  # Node Exporter service
+
+  - job_name: 'cadvisor'
+    static_configs:
+      - targets: ['cadvisor:8080']  # cAdvisor service
+
+```
 cadvisor port: 8080
 node-exporter port: 9100
 
